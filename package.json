@@ -1,0 +1,21 @@
+{
+  "name": "jest-prisma-repro-141",
+  "private": true,
+  "scripts": {
+    "prepare": "prisma generate",
+    "test": "jest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@quramy/jest-prisma-node": "1.8.0",
+    "@types/jest": "29.5.12",
+    "jest": "29.7.0",
+    "prettier": "3.2.5",
+    "prisma": "5.11.0",
+    "ts-jest": "29.1.2",
+    "typescript": "5.4.3"
+  },
+  "dependencies": {
+    "@prisma/client": "5.11.0"
+  }
+}
