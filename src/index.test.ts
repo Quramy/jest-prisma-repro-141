@@ -28,9 +28,18 @@ test(ensureUser.name, async () => {
   // succeed
   expect(await ensureUser(jestPrisma.client, data)).toBe(true);
 
-  // succeed
-  expect(await ensureUser(jestPrisma.client, data)).toBe(true);
+  try {
+    await jestPrisma.client.$transaction(async () => {
+      // succeed
+      expect(await ensureUser(jestPrisma.client, data)).toBe(true);
+      throw new Error();
+    });
+  } catch {}
 
-  // fail
+  // succeed
   expect(await jestPrisma.client.user.count()).toBe(1);
+});
+
+test("count user", async () => {
+  expect(await jestPrisma.client.user.count()).toBe(0);
 });
