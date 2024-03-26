@@ -6,5 +6,6 @@ export default {
   setupFilesAfterEnv: [],
   testEnvironmentOptions: {
     verboseQuery: true,
+    enableExperimentalRollbackInTransaction: true,
   },
 };
